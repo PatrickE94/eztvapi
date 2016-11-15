@@ -35,6 +35,8 @@ eztv
       //    magnet: 'MAGNET URI',
       //    hash: 'HASH',
       //    size: 0/*bytes*/,
+      //    seeds: 0,
+      //    released: '2d 9h'
       // }
     })
     .catch(function(err) {
@@ -57,6 +59,8 @@ eztv
       //    magnet: 'MAGNET URI',
       //    hash: 'HASH',
       //    size: 0/*bytes*/,
+      //    seeds: 0, /* Seeds will always be zero since the seeds are not present on the series page. */
+      //    released: '2d 9h'
       // }
     })
     .catch(function(err) {
