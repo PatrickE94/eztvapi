@@ -51,13 +51,15 @@ function grabTorrents(data) {
     var mag = magnet.decode(el(".magnet").attr('href'));
     var epinfo = el(".epinfo");
     var size = epinfo.attr("title").replace(epinfo.text(), '').match(/\(([^\)]*)\)/)[1];
+    var seeds = el(".forum_thread_post:nth-last-child(2)");
     size = strToBytes(size);
     torrents.push({
       title: el(".epinfo").text(),
       link: base + el(".epinfo").attr('href'),
       magnet: el(".magnet").attr('href'),
       hash: mag.infoHash,
-      size: size
+      size: size,
+      seeds: Number(seeds.text().replace(/\D/, ''))
     });
   });
   return torrents;
