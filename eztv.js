@@ -46,7 +46,7 @@ module.exports.series = function getSeries() {
 function grabTorrents(data) {
   var $ = cheerio.load(data.body);
   var torrents = [];
-  $('table.forum_header_border tr.forum_header_border').each(function(i, elem) {
+  $('table tr.forum_header_border').each(function(i, elem) {
     var el = cheerio.load(elem);
     var mag = magnet.decode(el(".magnet").attr('href'));
     var epinfo = el(".epinfo");
